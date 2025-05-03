@@ -112,3 +112,7 @@ idea {
         downloadJavadoc = true
     }
 }
+
+jar{
+    exclude 'dev/hail/bedrock_platform/Datagen'
+}

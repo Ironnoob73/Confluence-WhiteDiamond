@@ -1,5 +1,8 @@
 package dev.hail.white_diamond;
 
+import dev.hail.white_diamond.Block.WDBlocks;
+import dev.hail.white_diamond.Item.WDItems;
+import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -38,26 +41,26 @@ public class WhiteDiamondMod
 {
     public static final String MODID = "white_diamond";
     private static final Logger LOGGER = LogUtils.getLogger();
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-    public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
-            .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.examplemod"))
-            .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("white_diamond_tab", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.white_diamond"))
+            .icon(() -> WDItems.WHITE_DIAMOND.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get());
+                output.accept(WDItems.WHITE_DIAMOND.get());
+                output.accept(WDBlocks.WHITE_DIAMOND_BLOCK.asItem());
+                output.accept(WDBlocks.WHITE_DIAMOND_ORE.asItem());
+                output.accept(WDBlocks.DEEPSLATE_WHITE_DIAMOND_ORE.asItem());
+                output.accept(WDBlocks.SANCTIFICATION_WHITE_DIAMOND_ORE.asItem());
+                output.accept(WDBlocks.CORRUPTION_WHITE_DIAMOND_ORE.asItem());
+                output.accept(WDBlocks.FLESHIFICATION_WHITE_DIAMOND_ORE.asItem());
             }).build());
 
     public WhiteDiamondMod(IEventBus modEventBus, ModContainer modContainer)
     {
         modEventBus.addListener(this::commonSetup);
 
-        BLOCKS.register(modEventBus);
-        ITEMS.register(modEventBus);
+        WDBlocks.BLOCKS.register(modEventBus);
+        WDItems.ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
@@ -84,5 +87,8 @@ public class WhiteDiamondMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
         }
+    }
+    public static ResourceLocation modResLocation(String path){
+        return ResourceLocation.fromNamespaceAndPath(MODID, path);
     }
 }
