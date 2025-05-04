@@ -1,0 +1,10 @@
+{
+  "values": [
+    "white_diamond:white_diamond_block",
+    "white_diamond:white_diamond_ore",
+    "white_diamond:deepslate_white_diamond_ore",
+    "white_diamond:sanctification_white_diamond_ore",
+    "white_diamond:corruption_white_diamond_ore",
+    "white_diamond:fleshification_white_diamond_ore"
+  ]
+}

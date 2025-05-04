@@ -4,5 +4,8 @@
   "item.white_diamond.white_diamond": "白钻",
   "block.white_diamond.white_diamond_block": "白钻块",
   "block.white_diamond.white_diamond_ore": "白钻矿石",
-  "block.white_diamond.deepslate_white_diamond_ore": "深层白钻矿石"
+  "block.white_diamond.deepslate_white_diamond_ore": "深层白钻矿石",
+  "block.white_diamond.sanctification_white_diamond_ore": "圣化白钻矿石",
+  "block.white_diamond.corruption_white_diamond_ore": "腐化白钻矿石",
+  "block.white_diamond.fleshification_white_diamond_ore": "血化白钻矿石"
 }

@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": {
+    "type": "neoforge:any"
+  },
+  "features": [
+    "white_diamond:white_diamond_ore_generates"
+  ],
+  "step": "underground_ores"
+}

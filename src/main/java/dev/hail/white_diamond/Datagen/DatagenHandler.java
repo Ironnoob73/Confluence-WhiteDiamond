@@ -24,5 +24,6 @@ public class DatagenHandler {
 
         generator.addProvider(event.includeClient(), new WDItemModelProvider(output, helper));
         generator.addProvider(event.includeClient(), new WDBlockModelProvider(output, helper));
+        generator.addProvider(event.includeServer(), new WDLootTableProvider(output, lookupProvider));
     }
 }

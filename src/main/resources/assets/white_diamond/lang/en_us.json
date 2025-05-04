@@ -4,5 +4,8 @@
   "item.white_diamond.white_diamond": "White Diamond",
   "block.white_diamond.white_diamond_block": "White Diamond Block",
   "block.white_diamond.white_diamond_ore": "White Diamond Ore",
-  "block.white_diamond.deepslate_white_diamond_ore": "Deepslate White Diamond Ore"
+  "block.white_diamond.deepslate_white_diamond_ore": "Deepslate White Diamond Ore",
+  "block.white_diamond.sanctification_white_diamond_ore": "Sanctification White Diamond Ore",
+  "block.white_diamond.corruption_white_diamond_ore": "Corruption White Diamond Ore",
+  "block.white_diamond.fleshification_white_diamond_ore": "Fleshification White Diamond Ore"
 }

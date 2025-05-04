@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "white_diamond:white_diamond_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "white_diamond:white_diamond"
+  }
+}
